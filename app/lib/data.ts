@@ -150,10 +150,9 @@ export async function fetchInvoiceById(id: string) {
     `;
 
     const invoice = data.map((invoice) => ({
-      ...invoice,
-      amount: invoice.amount / 100,
-    }));
-
+  ...invoice,
+  amount: invoice.amount / 100,
+}));
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
