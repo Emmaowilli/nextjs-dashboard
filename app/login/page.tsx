@@ -6,7 +6,6 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-50">
       <div className="w-full max-w-[400px] space-y-6 p-6">
-    
         <div className="flex justify-center">
           <div className="w-32">
             <AcmeLogo />
