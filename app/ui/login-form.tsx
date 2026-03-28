@@ -15,13 +15,11 @@ import { useSearchParams } from 'next/navigation';
 export default function LoginForm() {
   const searchParams = useSearchParams();
 
-  
   const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
 
-  
   const [errorMessage, formAction, isPending] = useActionState(
     authenticate,
-    undefined,
+    undefined
   );
 
   return (
@@ -32,7 +30,7 @@ export default function LoginForm() {
         </h1>
 
         <div className="w-full">
-          
+          {/* Email */}
           <div>
             <label
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
@@ -53,7 +51,7 @@ export default function LoginForm() {
             </div>
           </div>
 
-      
+          {/* Password */}
           <div className="mt-4">
             <label
               className="mb-3 mt-5 block text-xs font-medium text-gray-900"
@@ -76,14 +74,14 @@ export default function LoginForm() {
           </div>
         </div>
 
-      
+        {/* Hidden redirect */}
         <input type="hidden" name="redirectTo" value={callbackUrl} />
 
         <Button className="mt-4 w-full" aria-disabled={isPending}>
           Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
         </Button>
 
-      
+        {/* Error message */}
         <div
           className="flex h-8 items-end space-x-1"
           aria-live="polite"
